@@ -1,0 +1,104 @@
+k9s:
+  liveViewAutoRefresh: false
+  refreshRate: 2
+  maxConnRetry: 5
+  enableMouse: false
+  enableImageScan: false
+  headless: false
+  logoless: false
+  crumbsless: false
+  readOnly: false
+  noExitOnCtrlC: false
+  noIcons: false
+  shellPod:
+    image: busybox:1.35.0
+    namespace: default
+    limits:
+      cpu: 100m
+      memory: 100Mi
+  skipLatestRevCheck: false
+  logger:
+    tail: 100
+    buffer: 5000
+    sinceSeconds: 60
+    fullScreenLogs: false
+    textWrap: false
+    showTime: false
+  currentContext: prod-dq2-aks
+  currentCluster: prod-dq2-aks
+  keepMissingClusters: false
+  clusters:
+    dev-offerta-aks:
+      namespace:
+        active: staging
+        lockFavorites: false
+        favorites:
+        - operations
+        - staging
+        - all
+        - default
+      view:
+        active: pod
+      featureGates:
+        nodeShell: true
+      portForwardAddress: localhost
+    kind-kind:
+      namespace:
+        active: default
+        lockFavorites: false
+        favorites:
+        - all
+        - default
+      view:
+        active: pod
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+    ops-offerta-aks:
+      namespace:
+        active: all
+        lockFavorites: false
+        favorites:
+        - operations
+        - all
+        - default
+      view:
+        active: secrets
+      featureGates:
+        nodeShell: true
+      portForwardAddress: localhost
+    prod-dq2-aks:
+      namespace:
+        active: all
+        lockFavorites: false
+        favorites:
+        - all
+        - default
+      view:
+        active: pods
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+    prod-offerta-aks:
+      namespace:
+        active: all
+        lockFavorites: false
+        favorites:
+        - production
+        - operations
+        - all
+        - default
+      view:
+        active: pod
+      featureGates:
+        nodeShell: true
+      portForwardAddress: localhost
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+  screenDumpDir: /tmp/k9s-screens-per-gunnar
+  disablePodCounting: false
