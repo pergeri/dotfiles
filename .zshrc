@@ -72,7 +72,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ubuntu terraform ansible fzf helm kubectl thefuck zsh-navigation-tools)
+plugins=(ubuntu terraform ansible fzf helm kubectl zsh-navigation-tools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,14 +107,14 @@ alias cald="gcalcli cald"
 alias calm="gcalcli calm"
 alias charm="pycharm.sh . &"
 alias lf="exa --icons"
-alias shome="arandr /home/per-gunnar/.screenlayout/home.sh"
-alias soffice="arandr /home/per-gunnar/.screenlayout/office.sh"
-alias soffice2="arandr /home/per-gunnar/.screenlayout/office2.sh"
+alias shome="arandr /home/pg/.screenlayout/home.sh"
+alias soffice="arandr /home/pg/.screenlayout/office.sh"
+alias soffice2="arandr /home/pg/.screenlayout/office2.sh"
 alias slack="/usr/lib/slack/slack --enable-crashpad --enable-crashpad slack://TDGKLPX7H/magic-login/4935991889989-b867006e5f2b21795df14febd4778ca1b2f3aeb4d378643aa7d5a0dc2b27cd35"
-alias lvim="/home/per-gunnar/.local/bin/lvim"
+alias lvim="/home/pg/.local/bin/lvim"
 alias nvim="lvim"
-alias sw="cd /home/per-gunnar/workspace/git-repos/ && find -name .git -execdir git prmm \;"
-alias ws="cd /home/per-gunnar/workspace/git-repos/ && find -name .git -execdir pwd \; -execdir git status \;"
+alias sw="cd /home/pg/workspace/git-repos/ && find -name .git -execdir git prmm \;"
+alias ws="cd /home/pg/workspace/git-repos/ && find -name .git -execdir pwd \; -execdir git status \;"
 alias python="/usr/bin/python3.8"
 alias exa="exa -l --icons"
 alias myip="curl ifconfig.me"
@@ -132,3 +132,5 @@ export EDITOR=lvim
 setopt HIST_IGNORE_SPACE 
 setxkbmap -option caps:hyper
 setxkbmap -option caps:none
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
